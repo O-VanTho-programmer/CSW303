@@ -1,44 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Tenant {
-
     private User user;
-    private List<Contract> listOfContract;
+    private List<RentalContract> listOfContracts = new ArrayList<>();
 
     public Tenant(User user) {
         this.user = user;
-        this.listOfContract = new ArrayList<>();
     }
 
-    public User getUser() {
-        return user;
+    public void requestCreateRentalContract(String contractID, Property property, double rentAmount) {
+        RentalContract contract = new RentalContract(contractID, property.getPropertyID(), user.getUserID(), rentAmount);
+        listOfContracts.add(contract);
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public List<Contract> getListOfContract() {
-        return listOfContract;
-    }
-
-    public void setListOfContract(List<Contract> listOfContract) {
-        this.listOfContract = listOfContract;
-    }
-
-    // Method to request creating a rental contract
-    public void requestCreateRentalContract(Contract contract) {
-        listOfContract.add(contract);
-        System.out.println("Rental contract created.");
-    }
-
-    // Method to request terminating a rental contract
-    public void requestTerminateRentalContract(Contract contract) {
-        if (listOfContract.remove(contract)) {
-            System.out.println("Rental contract terminated.");
-        } else {
-            System.out.println("Contract not found.");
-        }
+    public void requestTerminateRentalContract(String contractID) {
+        listOfContracts.removeIf(c -> c.getContractID().equals(contractID));
     }
 }
