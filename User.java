@@ -1,5 +1,5 @@
 public class User {
-    int idCounter = 0;
+    static int idCounter = 0;
     int userId;
     String email;
     String password;
@@ -19,5 +19,17 @@ public class User {
 
         this.password = newPassword;
         return true;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        if(userType == null){
+            return;
+        }
+
+        this.userType = userType;
     }
 }

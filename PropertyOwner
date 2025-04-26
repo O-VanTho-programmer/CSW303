@@ -9,6 +9,7 @@ public class PropertyOwner {
     // Constructor
     public PropertyOwner(User user) {
         this.user = user;
+        this.user.setUserType('PropertyOwner');
         this.listOfProperties = new ArrayList<>();
     }
 
@@ -28,6 +29,7 @@ public class PropertyOwner {
     // Methods
     public void addProperty(Property property) {
         if (property != null && !listOfProperties.contains(property)) {
+            property.setPropertyOwnerId(user.userId);
             listOfProperties.add(property);
         }
     }
@@ -36,7 +38,6 @@ public class PropertyOwner {
         listOfProperties.remove(property);
     }
 
-    // Optional: Phương thức để hiển thị thông tin PropertyOwner
     @Override
     public String toString() {
         return "PropertyOwner{" +
