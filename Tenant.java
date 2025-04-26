@@ -1,15 +1,15 @@
 import java.util.*;
 
 public class Tenant {
-    private User user;
+    private Client user;
     private List<RentalContract> listOfContracts = new ArrayList<>();
 
-    public Tenant(User user) {
+    public Tenant(Client user) {
         this.user = user;
     }
 
     public void requestCreateRentalContract(String contractID, Property property, double rentAmount) {
-        RentalContract contract = new RentalContract(contractID, property.getPropertyID(), user.getUserID(), rentAmount);
+        RentalContract contract = new RentalContract(contractID, property.getPropertyId(), user.getUserID(), rentAmount);
         listOfContracts.add(contract);
     }
 

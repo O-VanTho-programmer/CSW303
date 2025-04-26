@@ -1,10 +1,10 @@
 public class RentalContract {
     private String contractID;
-    private String propertyID;
-    private String tenantID;
+    private int propertyID;
+    private int tenantID;
     private double rentAmount;
 
-    public RentalContract(String contractID, String propertyID, String tenantID, double rentAmount) {
+    public RentalContract(String contractID, int propertyID, int tenantID, double rentAmount) {
         this.contractID = contractID;
         this.propertyID = propertyID;
         this.tenantID = tenantID;
@@ -13,5 +13,9 @@ public class RentalContract {
 
     public void terminateContract() {
         System.out.println("Contract " + contractID + " has been terminated.");
+    }
+
+    public String getContractID() {
+        return contractID;
     }
 }

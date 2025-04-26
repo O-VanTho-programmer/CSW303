@@ -32,4 +32,8 @@ public class Client {
 
         this.userType = userType;
     }
+
+    public int getUserID(){
+        return this.userId;
+    }
 }

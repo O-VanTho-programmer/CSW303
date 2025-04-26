@@ -13,4 +13,8 @@ public class Property {
     public void setPropertyOwnerId(int propertyOwnerId) {
         this.propertyOwnerId = propertyOwnerId;
     }
+
+    public int getPropertyId() {
+        return propertyId;
+    }
 }
