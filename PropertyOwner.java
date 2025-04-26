@@ -3,22 +3,22 @@ import java.util.List;
 
 public class PropertyOwner {
     // Attributes
-    private User user; // Liên kết với class User
+    private Client user; // Liên kết với class User
     private List<Property> listOfProperties; // Danh sách các Property mà PropertyOwner sở hữu
 
     // Constructor
-    public PropertyOwner(User user) {
+    public PropertyOwner(Client user) {
         this.user = user;
-        this.user.setUserType('PropertyOwner');
+        this.user.setUserType("PropertyOwner");
         this.listOfProperties = new ArrayList<>();
     }
 
     // Getter và Setter
-    public User getUser() {
+    public Client getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Client user) {
         this.user = user;
     }
 

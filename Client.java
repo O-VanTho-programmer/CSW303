@@ -1,19 +1,19 @@
-public class User {
-    static int idCounter = 0;
+public class Client {
+    int idCounter = 0;
     int userId;
     String email;
     String password;
     String userType;
-    
-    public User(String email, String password, String userType){
+
+    public Client(String email, String password, String userType) {
         this.userId = ++idCounter;
         this.email = email;
         this.password = password;
         this.userType = userType;
     }
 
-    public boolean resetPassword(String curPassword, String newPassword){
-        if(!curPassword.equals(this.password)){
+    public boolean resetPassword(String curPassword, String newPassword) {
+        if (!curPassword.equals(this.password)) {
             return false;
         }
 
@@ -26,7 +26,7 @@ public class User {
     }
 
     public void setUserType(String userType) {
-        if(userType == null){
+        if (userType == null) {
             return;
         }
 
