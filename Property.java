@@ -9,4 +9,12 @@ public class Property {
         this.description = description;
         this.propertyOwnerId = propertyOwnerId;
     }
+
+    public void setPropertyOwnerId(int propertyOwnerId) {
+        this.propertyOwnerId = propertyOwnerId;
+    }
+
+    public int getPropertyId() {
+        return propertyId;
+    }
 }
